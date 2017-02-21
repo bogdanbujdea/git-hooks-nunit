@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="OpenMotics.App.Controls.DeviceView">
+  <ContentView.Content>
+    <StackLayout HorizontalOptions="StartAndExpand">
+      <Switch x:Name="SwitchControl" HorizontalOptions="Start"></Switch>
+      <Label x:Name="SwitchName" FontSize="18"></Label>
+      <Label x:Name="UpdatedTime" FontSize="18" TextColor="Blue"></Label>
+      <Button x:Name="RefreshButton" Text="Refresh"></Button>
+    </StackLayout>
+  </ContentView.Content>
+</ContentView>

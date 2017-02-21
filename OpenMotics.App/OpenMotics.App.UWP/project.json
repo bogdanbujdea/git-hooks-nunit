@@ -1,6 +1,8 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
+    "reactiveui-core": "7.1.0",
+    "Splat": "1.6.2",
     "Xamarin.Forms": "2.3.3.180"
   },
   "frameworks": {

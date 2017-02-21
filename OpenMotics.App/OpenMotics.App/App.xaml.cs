@@ -1,19 +1,21 @@
-﻿using Xamarin.Forms;
+﻿using OpenMotics.App.Infrastructure;
+using OpenMotics.App.Views;
+using Xamarin.Forms;
 
 namespace OpenMotics.App
 {
-    public partial class App : Application
+    public partial class App
     {
-        public App()
+        public App(AppSetup setup)
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            AppContainer.Container = setup.CreateContainer();
+            
+            MainPage = new NavigationPage(new DevicesView());
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
         }
 
         protected override void OnSleep()

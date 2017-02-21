@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using OpenMotics.App.Infrastructure;
+using ReactiveUI;
 
 namespace OpenMotics.App.Droid
 {
@@ -18,9 +20,9 @@ namespace OpenMotics.App.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+            RxApp.SuspensionHost.GetAppState<AppContainer>();
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new App(new AppSetup()));
         }
     }
 }
