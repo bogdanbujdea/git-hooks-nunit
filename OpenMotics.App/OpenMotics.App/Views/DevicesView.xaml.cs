@@ -14,6 +14,11 @@ namespace OpenMotics.App.Views
         {
             InitializeComponent();
             ViewModel = AppContainer.Container.Resolve<DevicesViewModel>();
+            SetupBindings();
+        }
+
+        private void SetupBindings()
+        {
             this.BindCommand(ViewModel, vm => vm.RefreshDevicesCommand, v => v.Refresh);
             this.OneWayBind(ViewModel, x => x.Devices, x => x.DeviceList.ItemsSource);
             this.WhenAnyValue(x => x.ViewModel.IsLoading)
@@ -21,9 +26,7 @@ namespace OpenMotics.App.Views
                 .Subscribe(busy =>
                 {
                     Refresh.IsEnabled = !busy;
-                    if (busy)
-                        Refresh.Text = "Loading...";
-                    else Refresh.Text = "Refresh devices";
+                    Refresh.Text = busy ? "Loading..." : "Refresh devices";
                 });
         }
 

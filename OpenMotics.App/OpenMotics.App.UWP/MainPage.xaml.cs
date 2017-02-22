@@ -8,7 +8,7 @@ namespace OpenMotics.App.UWP
         {
             InitializeComponent();
 
-            LoadApplication(new OpenMotics.App.App(new Setup()));
+            LoadApplication(new OpenMotics.App.App(new AppSetup()));
         }
     }
 }

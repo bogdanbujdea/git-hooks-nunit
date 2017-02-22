@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Autofac;
 using OpenMotics.App.Infrastructure;
 using OpenMotics.SDK.Services;
@@ -9,9 +10,9 @@ namespace OpenMotics.App.ViewModels
     public class DevicesViewModel : ViewModelBase
     {
         private readonly IDeviceManager _deviceManager;
-        private ReactiveList<DeviceControlViewModel> _devices;
+        private ObservableCollection<DeviceControlViewModel> _devices;
 
-        public ReactiveList<DeviceControlViewModel> Devices
+        public ObservableCollection<DeviceControlViewModel> Devices
         {
             get { return _devices; }
             set { this.RaiseAndSetIfChanged(ref _devices, value); }
@@ -22,7 +23,7 @@ namespace OpenMotics.App.ViewModels
             _deviceManager = deviceManager;
             RefreshDevicesCommand = ReactiveCommand.CreateFromTask(RefreshDevices);
             RefreshDevicesCommand.IsExecuting.ToProperty(this, x => x.IsLoading, out _isLoading);
-            Devices = new ReactiveList<DeviceControlViewModel>();
+            Devices = new ObservableCollection<DeviceControlViewModel>();
         }
 
         private async Task RefreshDevices()

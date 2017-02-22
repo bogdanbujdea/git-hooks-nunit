@@ -44,7 +44,6 @@
       <DependentUpon>DeviceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Infrastructure\Setup.cs" />
     <Compile Include="ViewModels\DeviceControlViewModel.cs" />
     <Compile Include="ViewModels\DevicesViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />

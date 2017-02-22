@@ -13,7 +13,7 @@ namespace OpenMotics.App.ViewModels
             RefreshDeviceCommand = ReactiveCommand.Create(RefreshDevice);
         }
 
-        public void RefreshDevice()
+        private void RefreshDevice()
         {
             IsOn = !IsOn;
         }
