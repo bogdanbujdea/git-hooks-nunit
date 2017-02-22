@@ -14,7 +14,7 @@ namespace HookTests.Tests
         [Test]
         public void test_f()
         {
-            Calculator.Add(1, 2).Should().Be(4);
+            Calculator.Add(1, 2).Should().Be(3);
         }
     }
 }
